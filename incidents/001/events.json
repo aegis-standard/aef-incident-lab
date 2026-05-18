@@ -1,0 +1,126 @@
+{
+  "description": "AEF 事故案例 001：AI 误删关键配置文件",
+  "session_id": "incident-001",
+  "events": [
+    {
+      "id": "evt-001",
+      "timestamp": "2026-05-18T14:00:00Z",
+      "session_id": "incident-001",
+      "causality_id": null,
+      "actor": "agent",
+      "agent_id": "cleaner-bot",
+      "action": "task.created",
+      "payload": {
+        "goal": "清理项目中的临时文件"
+      },
+      "integrity_hash": "820777bef7ed837cb5331c3323947307d7fde5fc825818fbdf09c60e68c064c2",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-001"
+        ]
+      }
+    },
+    {
+      "id": "evt-002",
+      "timestamp": "2026-05-18T14:00:05Z",
+      "session_id": "incident-001",
+      "causality_id": "evt-001",
+      "actor": "agent",
+      "agent_id": "cleaner-bot",
+      "action": "tool.call.started",
+      "payload": {
+        "tool_name": "delete_file",
+        "input": {
+          "path": "config/production.yaml",
+          "reason": "识别为临时文件"
+        }
+      },
+      "integrity_hash": "805af9d3deaa78d0a09bb37351359542ac40838f1e70fecb3f9f4032c9cd1a0e",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-001"
+        ]
+      }
+    },
+    {
+      "id": "evt-003",
+      "timestamp": "2026-05-18T14:00:06Z",
+      "session_id": "incident-001",
+      "causality_id": "evt-002",
+      "actor": "agent",
+      "agent_id": "cleaner-bot",
+      "action": "tool.call.completed",
+      "payload": {
+        "tool_name": "delete_file",
+        "output": {
+          "deleted_path": "config/production.yaml",
+          "file_size_bytes": 2048,
+          "backup_available": false
+        }
+      },
+      "integrity_hash": "ff417346d353da71a7a290ad85e22373b7d2680ee4cd00c1392a189195248573",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-001",
+          "key-node"
+        ]
+      }
+    },
+    {
+      "id": "evt-004",
+      "timestamp": "2026-05-18T14:02:00Z",
+      "session_id": "incident-001",
+      "causality_id": "evt-003",
+      "actor": "human",
+      "agent_id": null,
+      "action": "human.override",
+      "payload": {
+        "original_output": "文件已删除：config/production.yaml",
+        "corrected_output": "立即从备份恢复 production.yaml",
+        "override_reason": "误删了生产配置文件，非临时文件",
+        "override_scope": "full",
+        "related_event_id": "evt-003"
+      },
+      "integrity_hash": "2777c1aabb855f07dc812affe776548346857822a79149e982f7a01525fb2dca",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-001",
+          "key-node"
+        ]
+      }
+    },
+    {
+      "id": "evt-005",
+      "timestamp": "2026-05-18T14:05:00Z",
+      "session_id": "incident-001",
+      "causality_id": "evt-004",
+      "actor": "agent",
+      "agent_id": "cleaner-bot",
+      "action": "task.completed",
+      "payload": {
+        "final_summary": "配置文件已从备份恢复，生产环境恢复正常"
+      },
+      "integrity_hash": "37b1ae8e7c8e77c26e192eb5e16ffd7d179098d2225fe20650a52d74d26438cf",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-001"
+        ]
+      }
+    }
+  ]
+}
