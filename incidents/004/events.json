@@ -1,0 +1,107 @@
+{
+  "description": "AEF 案例 004：AI 交易决策追溯",
+  "session_id": "incident-004",
+  "events": [
+    {
+      "id": "evt-001",
+      "timestamp": "2026-05-18T09:00:00Z",
+      "session_id": "incident-004",
+      "causality_id": null,
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "task.created",
+      "payload": { "goal": "执行日内交易策略" },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+    },
+    {
+      "id": "evt-002",
+      "timestamp": "2026-05-18T09:00:05Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-001",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "tool.call.started",
+      "payload": { "tool_name": "market_data", "input": { "symbols": ["AAPL", "NVDA", "TSLA"] } },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+    },
+    {
+      "id": "evt-003",
+      "timestamp": "2026-05-18T09:00:06Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-002",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "tool.call.completed",
+      "payload": { "tool_name": "market_data", "output": { "anomaly_detected": true, "volatility_spike": "NVDA", "spike_percent": 8.5 } },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+    },
+    {
+      "id": "evt-004",
+      "timestamp": "2026-05-18T09:00:10Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-003",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "tool.call.started",
+      "payload": { "tool_name": "trading_signal", "input": { "anomaly_data": "NVDA +8.5%" } },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+    },
+    {
+      "id": "evt-005",
+      "timestamp": "2026-05-18T09:00:12Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-004",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "tool.call.completed",
+      "payload": { "tool_name": "trading_signal", "output": { "action": "SELL", "percentage": 60, "reason": "波动率突破阈值" } },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+    },
+    {
+      "id": "evt-006",
+      "timestamp": "2026-05-18T09:00:15Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-005",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "tool.call.started",
+      "payload": { "tool_name": "execute_order", "input": { "action": "SELL", "percentage": 60 } },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+    },
+    {
+      "id": "evt-007",
+      "timestamp": "2026-05-18T09:01:00Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-006",
+      "actor": "human",
+      "agent_id": null,
+      "action": "human.override",
+      "payload": {
+        "original_output": "卖出 60%",
+        "corrected_output": "卖出 30%",
+        "override_reason": "人工审核降低风险敞口",
+        "override_scope": "partial"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+    },
+    {
+      "id": "evt-008",
+      "timestamp": "2026-05-18T09:02:00Z",
+      "session_id": "incident-004",
+      "causality_id": "evt-007",
+      "actor": "agent",
+      "agent_id": "ai-trader",
+      "action": "task.completed",
+      "payload": { "final_summary": "交易完成，实际卖出 30% 仓位" },
+      "integrity_hash": "placeholder",
+      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+    }
+  ]
+}
