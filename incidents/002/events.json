@@ -13,11 +13,14 @@
       "payload": {
         "goal": "更新 staging 数据库连接字符串"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "2d2ce3dddb75d3441312f3726269affd877d419a894f4510b4cc13a0e176e1da",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002"]
+        "tags": [
+          "incident",
+          "case-002"
+        ]
       }
     },
     {
@@ -37,11 +40,15 @@
           "new_value": "mysql://prod-db.internal:3306/app"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "bd5376f2f6e93fb452e997a8b46bdf53c3dede5a64603760c8d6f9c66553ff95",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002", "key-node"]
+        "tags": [
+          "incident",
+          "case-002",
+          "key-node"
+        ]
       }
     },
     {
@@ -59,11 +66,14 @@
           "status": "accepted"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "9f51b364523faa436c5afe76d01e56e820e86bd1b5b47af628024804d0461eb9",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002"]
+        "tags": [
+          "incident",
+          "case-002"
+        ]
       }
     },
     {
@@ -82,11 +92,15 @@
           "value": "mysql://prod-db.internal:3306/app"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "c378e972e30dfad5b1f51805d97e3e34fed66a59af663f4fb807f2153854ebc7",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002", "key-node"]
+        "tags": [
+          "incident",
+          "case-002",
+          "key-node"
+        ]
       }
     },
     {
@@ -106,11 +120,15 @@
           "new_value": "mysql://prod-db.internal:3306/app"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "1527e719271419958c5b42e606d79c629db9afdb868d8013ef08f2a44d2539e0",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002", "key-node"]
+        "tags": [
+          "incident",
+          "case-002",
+          "key-node"
+        ]
       }
     },
     {
@@ -128,11 +146,15 @@
         "override_scope": "full",
         "related_event_id": "evt-005"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "a4ded54ceac6cb680cc0c9609bf6bd7a95be8fc2278f85c62fdf31dd9aa8ff6f",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002", "key-node"]
+        "tags": [
+          "incident",
+          "case-002",
+          "key-node"
+        ]
       }
     },
     {
@@ -146,11 +168,14 @@
       "payload": {
         "final_summary": "配置已回滚，生产环境恢复正常"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "9ce50dcfe46f6512dae687693ec86781c1f84715ad752e3960d550e35653aac3",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-002"]
+        "tags": [
+          "incident",
+          "case-002"
+        ]
       }
     }
   ]
