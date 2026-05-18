@@ -13,11 +13,14 @@
       "payload": {
         "goal": "部署 v2.3.0 到生产环境"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "db59cf8cda846a81692eadf370a16c760127c850daa45b977e2d40b8619d43fb",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003"]
+        "tags": [
+          "incident",
+          "case-003"
+        ]
       }
     },
     {
@@ -37,11 +40,14 @@
           "day_of_week": "Friday"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "fdf0f0498a0d7935313dc86fd08d5278a7126100842c51a382a08b8e28132267",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003"]
+        "tags": [
+          "incident",
+          "case-003"
+        ]
       }
     },
     {
@@ -59,11 +65,15 @@
         "override_scope": "full",
         "related_event_id": "evt-002"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "9326a620f2dca86a05c4bba1b5fabd80d0b4680f4bf0cec28c2630c2c64229d4",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003", "key-node"]
+        "tags": [
+          "incident",
+          "case-003",
+          "key-node"
+        ]
       }
     },
     {
@@ -83,11 +93,15 @@
           "override_status": "ignored"
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "5fa79e228e387e725e0398f05a7d8f402447602c17c384ffab207deeda0dacfe",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003", "key-node"]
+        "tags": [
+          "incident",
+          "case-003",
+          "key-node"
+        ]
       }
     },
     {
@@ -107,11 +121,15 @@
           "deployment_time_seconds": 287
         }
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "93f4ef08fe7bfbdad402506eee9154ebf1cd6328a61b679b8a05aaa9df4bb492",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003", "key-node"]
+        "tags": [
+          "incident",
+          "case-003",
+          "key-node"
+        ]
       }
     },
     {
@@ -127,11 +145,15 @@
         "severity": "critical",
         "affected_users": 15000
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "3f5fd19e69751a9b63133a974e36ee2cbb72d3238aad22c65897274c28694ad3",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003", "key-node"]
+        "tags": [
+          "incident",
+          "case-003",
+          "key-node"
+        ]
       }
     },
     {
@@ -149,11 +171,15 @@
         "override_scope": "full",
         "related_event_id": "evt-005"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "1d3de11ff45742689267f1963f13cf1d4f316620f4db2151f3589abe2795d748",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003", "key-node"]
+        "tags": [
+          "incident",
+          "case-003",
+          "key-node"
+        ]
       }
     },
     {
@@ -167,11 +193,14 @@
       "payload": {
         "final_summary": "已回滚到 v2.2.9，生产环境恢复正常。v2.3.0 部署已被覆盖并标记为失败。"
       },
-      "integrity_hash": "placeholder",
+      "integrity_hash": "aebd52d644553741c0de55f3777af06b36ef969cf430570ceada19eb7ee98908",
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": ["incident", "case-003"]
+        "tags": [
+          "incident",
+          "case-003"
+        ]
       }
     }
   ]
