@@ -17,10 +17,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003"
-        ]
+        "tags": ["incident", "case-003"]
       }
     },
     {
@@ -44,10 +41,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003"
-        ]
+        "tags": ["incident", "case-003"]
       }
     },
     {
@@ -69,11 +63,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003",
-          "key-node"
-        ]
+        "tags": ["incident", "case-003", "key-node"]
       }
     },
     {
@@ -97,11 +87,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003",
-          "key-node"
-        ]
+        "tags": ["incident", "case-003", "key-node"]
       }
     },
     {
@@ -125,11 +111,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003",
-          "key-node"
-        ]
+        "tags": ["incident", "case-003", "key-node"]
       }
     },
     {
@@ -149,11 +131,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003",
-          "key-node"
-        ]
+        "tags": ["incident", "case-003", "key-node"]
       }
     },
     {
@@ -175,11 +153,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003",
-          "key-node"
-        ]
+        "tags": ["incident", "case-003", "key-node"]
       }
     },
     {
@@ -197,10 +171,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-003"
-        ]
+        "tags": ["incident", "case-003"]
       }
     }
   ]
