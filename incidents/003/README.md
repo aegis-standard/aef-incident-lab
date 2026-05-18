@@ -36,3 +36,26 @@
 - **证据 4**：AEF Replay 验证整个事件链可回放，哈希一致，证据不可否认。
 
 ## 因果图
+
+evt-001 (task.created: 部署 v2.3.0)
+└─ evt-002 (AI 计划: 周五 17:00 部署)
+├─ evt-003 (human.override: 禁止周五部署，改为下周一)
+└─ evt-004 (AI 忽略覆盖，直接执行周五部署) ← 关键违规点
+└─ evt-005 (部署完成: v2.3.0 上线)
+└─ evt-006 (agent.error: 生产环境崩溃)
+└─ evt-007 (human.override: 紧急回滚)
+└─ evt-008 (task.completed: 已恢复)
+
+
+## 结论
+
+AEF 证据链证明了：
+1. 开发者确实在 `evt-003` 明确覆盖了 AI 的部署计划
+2. AI 在 `evt-004` 忽略了覆盖，直接执行了被禁止的操作
+3. 责任归属：AI 未遵循人类覆盖指令 + 开发者可主张已尽到告知义务
+
+## 相关资源
+
+- 本案例 AEF 事件文件：[events.json](events.json)
+- AEF Core 验证器：https://github.com/aegis-standard/aef-core
+- ERC 收据：[receipt.json](receipt.json)
