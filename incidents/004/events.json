@@ -10,9 +10,18 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "task.created",
-      "payload": { "goal": "执行日内交易策略" },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+      "payload": {
+        "goal": "执行日内交易策略"
+      },
+      "integrity_hash": "5f2974563e909f08b8b34544baf81d55476e089cbd5727268446c78421e5661a",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004"
+        ]
+      }
     },
     {
       "id": "evt-002",
@@ -22,9 +31,25 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "tool.call.started",
-      "payload": { "tool_name": "market_data", "input": { "symbols": ["AAPL", "NVDA", "TSLA"] } },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+      "payload": {
+        "tool_name": "market_data",
+        "input": {
+          "symbols": [
+            "AAPL",
+            "NVDA",
+            "TSLA"
+          ]
+        }
+      },
+      "integrity_hash": "5673f62c1d3786b93d90b19d7cdead2528621015f8a9512a0df18f0d4dd25feb",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004"
+        ]
+      }
     },
     {
       "id": "evt-003",
@@ -34,9 +59,24 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "tool.call.completed",
-      "payload": { "tool_name": "market_data", "output": { "anomaly_detected": true, "volatility_spike": "NVDA", "spike_percent": 8.5 } },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+      "payload": {
+        "tool_name": "market_data",
+        "output": {
+          "anomaly_detected": true,
+          "volatility_spike": "NVDA",
+          "spike_percent": 8.5
+        }
+      },
+      "integrity_hash": "1d4d268d5090195d37e120e9bc01ce9f11c79e8f2567231eb34216760de183f2",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004",
+          "key-node"
+        ]
+      }
     },
     {
       "id": "evt-004",
@@ -46,9 +86,21 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "tool.call.started",
-      "payload": { "tool_name": "trading_signal", "input": { "anomaly_data": "NVDA +8.5%" } },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+      "payload": {
+        "tool_name": "trading_signal",
+        "input": {
+          "anomaly_data": "NVDA +8.5%"
+        }
+      },
+      "integrity_hash": "af5bc47b298e36db864a33aaf9bdfde92a9c786aafd68bdf2b09ed0782d4b29c",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004"
+        ]
+      }
     },
     {
       "id": "evt-005",
@@ -58,9 +110,24 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "tool.call.completed",
-      "payload": { "tool_name": "trading_signal", "output": { "action": "SELL", "percentage": 60, "reason": "波动率突破阈值" } },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+      "payload": {
+        "tool_name": "trading_signal",
+        "output": {
+          "action": "SELL",
+          "percentage": 60,
+          "reason": "波动率突破阈值"
+        }
+      },
+      "integrity_hash": "f6b135de0f7e14f44dbbf70ae63e0a3fa5bd133ccea074ef6d8be8a329865079",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004",
+          "key-node"
+        ]
+      }
     },
     {
       "id": "evt-006",
@@ -70,9 +137,22 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "tool.call.started",
-      "payload": { "tool_name": "execute_order", "input": { "action": "SELL", "percentage": 60 } },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+      "payload": {
+        "tool_name": "execute_order",
+        "input": {
+          "action": "SELL",
+          "percentage": 60
+        }
+      },
+      "integrity_hash": "ebc57afee4e784141a109d984dbd26f3d5506331bde94be0648563405f276508",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004"
+        ]
+      }
     },
     {
       "id": "evt-007",
@@ -88,8 +168,16 @@
         "override_reason": "人工审核降低风险敞口",
         "override_scope": "partial"
       },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004", "key-node"] }
+      "integrity_hash": "8ed0bd2bb2fc9cc7ec06d54798d21f5860f0cf142db81d0a3efce90c2e0af03d",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004",
+          "key-node"
+        ]
+      }
     },
     {
       "id": "evt-008",
@@ -99,9 +187,18 @@
       "actor": "agent",
       "agent_id": "ai-trader",
       "action": "task.completed",
-      "payload": { "final_summary": "交易完成，实际卖出 30% 仓位" },
-      "integrity_hash": "placeholder",
-      "metadata": { "source": "aef-incident-lab", "schema_version": "1.0", "tags": ["incident", "case-004"] }
+      "payload": {
+        "final_summary": "交易完成，实际卖出 30% 仓位"
+      },
+      "integrity_hash": "321b5d30a20ad407787ae4c59dfb7224000eae8ffc6fc16d3d478107574091f1",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": [
+          "incident",
+          "case-004"
+        ]
+      }
     }
   ]
 }
