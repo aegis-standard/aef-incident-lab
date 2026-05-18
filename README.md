@@ -63,6 +63,7 @@
 | [001](incidents/001/) | AI 误删关键配置文件 | 工具误用（tool misuse） | ✅ 完整回放 + ERC 收据 |
 | [002](incidents/002/) | AI 修改生产配置并推卸责任 | 多 Agent 协作（multi-agent） | ✅ 因果图 + 责任链 |
 | [003](incidents/003/) | 人类覆盖被忽略导致部署失败 | 人类覆盖违规（human override violation） | ✅ human.override 事件 + replay |
+| [004](incidents/004/) | AI 交易决策无法追溯 | 量化交易 | ✅ AEF 事件链 + 因果图 |
 
 每个案例包含：
 - `README.md` — 事故描述、事件列表、因果图、关键证据、结论
