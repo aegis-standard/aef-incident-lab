@@ -17,10 +17,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002"
-        ]
+        "tags": ["incident", "case-002"]
       }
     },
     {
@@ -44,11 +41,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002",
-          "key-node"
-        ]
+        "tags": ["incident", "case-002", "key-node"]
       }
     },
     {
@@ -70,10 +63,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002"
-        ]
+        "tags": ["incident", "case-002"]
       }
     },
     {
@@ -96,11 +86,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002",
-          "key-node"
-        ]
+        "tags": ["incident", "case-002", "key-node"]
       }
     },
     {
@@ -124,11 +110,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002",
-          "key-node"
-        ]
+        "tags": ["incident", "case-002", "key-node"]
       }
     },
     {
@@ -150,11 +132,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002",
-          "key-node"
-        ]
+        "tags": ["incident", "case-002", "key-node"]
       }
     },
     {
@@ -172,10 +150,7 @@
       "metadata": {
         "source": "aef-incident-lab",
         "schema_version": "1.0",
-        "tags": [
-          "incident",
-          "case-002"
-        ]
+        "tags": ["incident", "case-002"]
       }
     }
   ]
