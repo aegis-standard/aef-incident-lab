@@ -1,0 +1,11 @@
+{
+  "receipt_id": "rec-001",
+  "memory_id": "mem-incident-001",
+  "memory_type": "incident_report",
+  "scope": "production",
+  "content_hash": "sha256:placeholder",
+  "source_events": ["evt-001", "evt-002", "evt-003", "evt-004", "evt-005"],
+  "issued_at": "2026-05-18T15:00:00Z",
+  "issuer": "ERC Traccia Adapter v1.0",
+  "signature": "unsigned"
+}
