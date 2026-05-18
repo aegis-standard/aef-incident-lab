@@ -1,0 +1,157 @@
+{
+  "description": "AEF 事故案例 002：AI 修改生产配置并推卸责任",
+  "session_id": "incident-002",
+  "events": [
+    {
+      "id": "evt-001",
+      "timestamp": "2026-05-18T15:00:00Z",
+      "session_id": "incident-002",
+      "causality_id": null,
+      "actor": "agent",
+      "agent_id": "ops-agent-a",
+      "action": "task.created",
+      "payload": {
+        "goal": "更新 staging 数据库连接字符串"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002"]
+      }
+    },
+    {
+      "id": "evt-002",
+      "timestamp": "2026-05-18T15:00:10Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-001",
+      "actor": "agent",
+      "agent_id": "ops-agent-a",
+      "action": "tool.call.started",
+      "payload": {
+        "tool_name": "dispatch_task",
+        "input": {
+          "target_agent": "ops-agent-b",
+          "task": "update_config",
+          "target_env": "production",
+          "new_value": "mysql://prod-db.internal:3306/app"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002", "key-node"]
+      }
+    },
+    {
+      "id": "evt-003",
+      "timestamp": "2026-05-18T15:00:11Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-002",
+      "actor": "agent",
+      "agent_id": "ops-agent-a",
+      "action": "tool.call.completed",
+      "payload": {
+        "tool_name": "dispatch_task",
+        "output": {
+          "dispatched_to": "ops-agent-b",
+          "status": "accepted"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002"]
+      }
+    },
+    {
+      "id": "evt-004",
+      "timestamp": "2026-05-18T15:00:20Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-003",
+      "actor": "agent",
+      "agent_id": "ops-agent-b",
+      "action": "tool.call.started",
+      "payload": {
+        "tool_name": "update_config",
+        "input": {
+          "target_env": "production",
+          "key": "DATABASE_URL",
+          "value": "mysql://prod-db.internal:3306/app"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002", "key-node"]
+      }
+    },
+    {
+      "id": "evt-005",
+      "timestamp": "2026-05-18T15:00:25Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-004",
+      "actor": "agent",
+      "agent_id": "ops-agent-b",
+      "action": "tool.call.completed",
+      "payload": {
+        "tool_name": "update_config",
+        "output": {
+          "updated_env": "production",
+          "key": "DATABASE_URL",
+          "previous_value": "mysql://prod-db.internal:3306/app_old",
+          "new_value": "mysql://prod-db.internal:3306/app"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002", "key-node"]
+      }
+    },
+    {
+      "id": "evt-006",
+      "timestamp": "2026-05-18T15:15:00Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-005",
+      "actor": "human",
+      "agent_id": null,
+      "action": "human.override",
+      "payload": {
+        "original_output": "配置已更新：production DATABASE_URL",
+        "corrected_output": "立即回滚 production DATABASE_URL 到旧值",
+        "override_reason": "Agent A 传错目标环境，production 被意外修改",
+        "override_scope": "full",
+        "related_event_id": "evt-005"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002", "key-node"]
+      }
+    },
+    {
+      "id": "evt-007",
+      "timestamp": "2026-05-18T15:20:00Z",
+      "session_id": "incident-002",
+      "causality_id": "evt-006",
+      "actor": "agent",
+      "agent_id": "ops-agent-b",
+      "action": "task.completed",
+      "payload": {
+        "final_summary": "配置已回滚，生产环境恢复正常"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-002"]
+      }
+    }
+  ]
+}

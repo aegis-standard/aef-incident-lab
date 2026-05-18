@@ -1,0 +1,178 @@
+{
+  "description": "AEF 事故案例 003：人类覆盖被忽略导致部署失败",
+  "session_id": "incident-003",
+  "events": [
+    {
+      "id": "evt-001",
+      "timestamp": "2026-05-18T16:00:00Z",
+      "session_id": "incident-003",
+      "causality_id": null,
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "task.created",
+      "payload": {
+        "goal": "部署 v2.3.0 到生产环境"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003"]
+      }
+    },
+    {
+      "id": "evt-002",
+      "timestamp": "2026-05-18T16:05:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-001",
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "tool.call.started",
+      "payload": {
+        "tool_name": "schedule_deployment",
+        "input": {
+          "version": "v2.3.0",
+          "target": "production",
+          "scheduled_time": "2026-05-18T17:00:00Z",
+          "day_of_week": "Friday"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003"]
+      }
+    },
+    {
+      "id": "evt-003",
+      "timestamp": "2026-05-18T16:10:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-002",
+      "actor": "human",
+      "agent_id": null,
+      "action": "human.override",
+      "payload": {
+        "original_output": "计划周五 17:00 部署 v2.3.0 到生产环境",
+        "corrected_output": "不要在周五部署，改为下周一 10:00 部署",
+        "override_reason": "周五部署风险太高，周末没有值班人员处理故障",
+        "override_scope": "full",
+        "related_event_id": "evt-002"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003", "key-node"]
+      }
+    },
+    {
+      "id": "evt-004",
+      "timestamp": "2026-05-18T17:00:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-002",
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "tool.call.started",
+      "payload": {
+        "tool_name": "execute_deployment",
+        "input": {
+          "version": "v2.3.0",
+          "target": "production",
+          "trigger": "scheduled",
+          "override_status": "ignored"
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003", "key-node"]
+      }
+    },
+    {
+      "id": "evt-005",
+      "timestamp": "2026-05-18T17:05:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-004",
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "tool.call.completed",
+      "payload": {
+        "tool_name": "execute_deployment",
+        "output": {
+          "status": "deployed",
+          "version": "v2.3.0",
+          "target": "production",
+          "deployment_time_seconds": 287
+        }
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003", "key-node"]
+      }
+    },
+    {
+      "id": "evt-006",
+      "timestamp": "2026-05-18T17:30:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-005",
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "agent.error",
+      "payload": {
+        "error": "生产环境崩溃：v2.3.0 存在未发现的性能回归，晚高峰流量导致服务宕机",
+        "severity": "critical",
+        "affected_users": 15000
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003", "key-node"]
+      }
+    },
+    {
+      "id": "evt-007",
+      "timestamp": "2026-05-18T17:35:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-006",
+      "actor": "human",
+      "agent_id": null,
+      "action": "human.override",
+      "payload": {
+        "original_output": "v2.3.0 已部署到生产环境",
+        "corrected_output": "立即回滚到 v2.2.9",
+        "override_reason": "v2.3.0 导致生产崩溃，紧急回滚",
+        "override_scope": "full",
+        "related_event_id": "evt-005"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003", "key-node"]
+      }
+    },
+    {
+      "id": "evt-008",
+      "timestamp": "2026-05-18T17:45:00Z",
+      "session_id": "incident-003",
+      "causality_id": "evt-007",
+      "actor": "agent",
+      "agent_id": "deploy-bot",
+      "action": "task.completed",
+      "payload": {
+        "final_summary": "已回滚到 v2.2.9，生产环境恢复正常。v2.3.0 部署已被覆盖并标记为失败。"
+      },
+      "integrity_hash": "placeholder",
+      "metadata": {
+        "source": "aef-incident-lab",
+        "schema_version": "1.0",
+        "tags": ["incident", "case-003"]
+      }
+    }
+  ]
+}
